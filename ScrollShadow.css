@@ -1,0 +1,66 @@
+.ScrollShadow {
+  height: 100%;
+  width: 100%;
+}
+
+.ScrollShadow .scrollArea {
+  overflow: hidden;
+  position: relative;
+}
+
+.ScrollShadow .scrollArea.fit {
+  height: 100%;
+  width: 100%;
+}
+
+.ScrollShadow .scrollArea.fit .scrollable {
+  bottom: 0;
+  left: 0;
+  max-height: none;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.ScrollShadow .scrollArea .scrollable.scrollY {
+  overflow-y: scroll;
+}
+
+.ScrollShadow .scrollArea .scrollable {
+  max-height: inherit;
+  overflow: hidden;
+  zoom: 1;
+}
+
+.ScrollShadow .scrollArea .scrollable::-webkit-scrollbar {
+  display: none;
+}
+
+.ScrollShadow .scrollArea .scrollNav {
+  cursor: pointer;
+  left: 10px;
+  opacity: 0;
+  position: absolute;
+  right: 10px;
+  transition: all 0.3s ease;
+}
+
+.ScrollShadow .scrollArea .scrollNavUp {
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 12px;
+  top: 0;
+  transform: translateY(-24px);
+}
+
+.ScrollShadow .scrollArea.canScrollUp .scrollNavUp,
+.ScrollShadow .scrollArea.canScrollDown .scrollNavDown {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.ScrollShadow .scrollArea .scrollNavDown {
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+  bottom: 0;
+  transform: translateY(24px);
+}
